@@ -1,0 +1,37 @@
+<mat-card>
+    <mat-card-title>Excluir colaborador</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [value]="employee.nome" name="name" disabled>
+        </mat-form-field>
+
+        <mat-form-field [(ngModel)]="employee.dataNasc" disabled>
+            <input matInput placeholder="Data de nascimento" name="dataNasc">
+        </mat-form-field>
+
+        <mat-radio-group aria-label="Select an option" [value]="employee.sexo" name="sexo" disabled>
+            <mat-radio-button value="1">Masculino</mat-radio-button>
+            <mat-radio-button value="2">Feminino</mat-radio-button>
+            <mat-radio-button value="3">Outros</mat-radio-button>
+        </mat-radio-group>
+
+        <mat-form-field>
+            <input matInput placeholder="Cargo" [value]="employee.cargo" name="cargo" disabled>
+        </mat-form-field>
+
+        <mat-checkbox class="example-margin" [(ngModel)]="employee.ativo" name="ativo" disabled>
+            Ativo
+        </mat-checkbox>
+
+        <mat-form-field>
+            <input matInput placeholder="Salário (R$)" [value]="employee.salario" name="salario" disabled>
+        </mat-form-field>
+
+    </form>
+    <button mat-raised-button (click)="deleteEmployee()" color="warn">
+        Excluir
+    </button>
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>

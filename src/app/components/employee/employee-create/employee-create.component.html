@@ -1,0 +1,39 @@
+<p>employee-create works!</p>
+
+<mat-card>
+    <mat-card-title>Novo colaborador</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="employee.nome" name="name">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Data de nascimento" [(ngModel)]="employee.dataNasc" name="dataNasc">
+        </mat-form-field>
+
+        <mat-radio-group aria-label="Select an option" [(ngModel)]="employee.sexo" name="sexo">
+            <mat-radio-button value="M">Masculino</mat-radio-button>
+            <mat-radio-button value="F">Feminino</mat-radio-button>
+            <mat-radio-button value="O">Outros</mat-radio-button>
+        </mat-radio-group>
+
+        <mat-form-field>
+            <input matInput placeholder="Cargo" [(ngModel)]="employee.cargo" name="cargo">
+        </mat-form-field>
+
+        <mat-checkbox class="example-margin" [(ngModel)]="employee.ativo" name="ativo">
+            Ativo
+        </mat-checkbox>
+
+        <mat-form-field>
+            <input matInput placeholder="Salário (R$)" [(ngModel)]="employee.salario" name="salario">
+        </mat-form-field>
+
+    </form>
+    <button mat-raised-button (click)="createOrUpdateEmployee()" color="primary">
+        Salvar
+    </button>
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>
